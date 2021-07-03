@@ -5,3 +5,13 @@ APP_NAME = "Troll Prediction"
 API_PREFIX = "/api"
 
 IS_DEBUG = os.getenv("IS_DEBUG", False)
+DEFAULT_MODEL_PATH = os.getenv("DEFAULT_MODEL_PATH")
+
+#KERAS
+SEQUENCE_LENGTH = 300
+
+# EXPORT
+KERAS_MODEL = "model.h5"
+TOKENIZER_MODEL = "tokenizer.pkl"
+
+SENTIMENT_THRESHOLD = [0.5]
