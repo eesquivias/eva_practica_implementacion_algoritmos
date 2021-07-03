@@ -3,9 +3,14 @@ from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
 
+from app.core.config import DEFAULT_MODEL_PATH
+from app.services.models import SentimentAnalysisModel
+
 
 def _startup_model(app: FastAPI) -> None:
-    app.state.model = None
+    model_path = DEFAULT_MODEL_PATH
+    model_instance = SentimentAnalysisModel(model_path)
+    app.state.model = model_instance
 
 
 def _shutdown_model(app: FastAPI) -> None:
