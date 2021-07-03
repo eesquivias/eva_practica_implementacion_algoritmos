@@ -4,4 +4,7 @@ from app.core.enums import Sentiment
 
 
 class SentimentPredictionResult(BaseModel):
-    pass
+    label: Sentiment
+    score: float
+    elapsed_time: float
+        
